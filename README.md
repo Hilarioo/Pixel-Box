@@ -34,7 +34,7 @@ None-Functional Requirements:
 ```bash
 cd Desktop
 
-git clone https://github.com/csc317-01-spring2020/csc317-termproject-Hilarioo.git
+git clone https://github.com/Hilarioo/Pixel-Box.git
 ```
 
 #### 3. Open VS Code
