@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title"></title>
+    <link rel="stylesheet" type="text/css" href="/public/stylesheets/style.css">
+    <script defer src="/public/javascripts/frontend.js"></script>
+    <!--Favicon-->
+    <link rel="icon" href="/public/images/pixel-box-logo.svg">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <!-- nav -->
+    <div id="header-block" class="flexBox-0">
+        <a class="menu-bar-txt" href="/">HOME</a>
+        <a class="menu-bar-txt" href="registration" id="register_to_upload">REGISTER</a>
+        <a class="menu-bar-txt" href="login" id="login_to_logout">LOGIN</a>
+    </div>
+
+    <!-- post -->
+    <div id="post-container">
+        <h2 id="image-post-title" class="fontModak"></h2>
+        <img src="" id="image-post" alt="photopath image">
+        <div id="flex-author-date">
+            <div id="image-post-author" class="smallFontSz"></div>
+            <div id="image-post-date" class="smallFontSz"></div>
+        </div>
+        <div id="image-post-desc"></div>
+    </div>
+
+    <!-- comments -->
+    <div id="post-comments">
+        <div id="send-comment">
+            <form id="comment-form" method="POST">
+                <input placeholder="write your comment here..." type="text" name="comment" id="comment">
+                <input id="submit-comment" class="" type="submit" value="Submit">
+            </form>
+        </div>
+        <div id="comment-container">
+
+        </div>
+    </div>
+
+
+    <script>
+        // GLOBAL POST ID
+        var url = document.URL.split('/');
+        var _id = url[url.length - 1];
+        var postURL = "http://localhost:3000/posts/getPostById/" + _id;
+
+        // ============================== [BUILDS POST DETAIL] ==============================
+        function buildMessage(msgData) {
+            fetch(postURL)
+                .then((data) => data.json())
+                .then((dataAsObject) => {
+                    console.log(dataAsObject);
+                    document.getElementById("title").textContent = dataAsObject.title + " | PixelBox";
+                    document.getElementById("image-post-title").textContent = dataAsObject.title;
+                    document.getElementById('image-post').setAttribute('src', '/' + dataAsObject.photopath);
+                    document.getElementById("image-post-author").textContent = "@" + dataAsObject.username;
+                    document.getElementById("image-post-date").textContent = dataAsObject.created;
+                    document.getElementById("image-post-desc").textContent = dataAsObject.description;
+                })
+                .catch((err) => console.log(err));
+        }
+        buildMessage();
+
+        // ============================== [SUBMITS & CREATES COMMENT] ==============================
+        function createComment(data) {
+            return `<div id=post-${data.id} class="comment"> \
+                        <div class="comment-box"> \
+                            <div id="flex-user-date"> \
+                                <div class="comment-user smallFontSz">@${data.username}</div> \
+                                <div class="comment-date smallFontSz">${data.created}</div> \
+                            </div>
+                            <p class="comment-text">${data.comment}</p> \
+                        </div> \
+                    </div>`;
+        }
+
+
+        const _form = document.getElementById("comment-form");
+        _form.onsubmit = function (event) {
+            event.preventDefault();
+            let comment = document.getElementById("comment").value;
+
+            axios('/posts/submitComment', {
+                data: {
+                    comment: comment,
+                    fk_postid: parseInt(_id)
+                },
+                method: "POST"
+            })
+                .then((data) => {
+                    console.log(data.data);
+                    alert(data.data.message);
+                    location.reload();
+                })
+                .catch((err) => {
+                    console.log(err);
+                })
+        }
+
+        // ============================== [FETCHES COMMENTS] ==============================
+        fetch("http://localhost:3000/posts/getComments/", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ fk_postid: _id })
+        })
+            .then((data) => data.json())
+            .then((dataAsObject) => {
+                console.log(dataAsObject);
+                let _html = "";
+                dataAsObject.forEach((post) => {
+                    _html += createComment(post);
+                })
+                document.getElementById('comment-container').innerHTML = _html;
+            })
+            .catch((err) => console.log(err));
+
+    </script>
+</body>
+
+</html>

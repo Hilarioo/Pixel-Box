@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Homepage | PixelBox</title>
+    <link rel="stylesheet" type="text/css" href="/public/stylesheets/style.css">
+    <script defer src="/public/javascripts/frontend.js"></script>
+    <!--Favicon-->
+    <link rel="icon" href="/public/images/pixel-box-logo.svg">
+</head>
+
+<body>
+    <div class="page-container">
+        <div class="flexContainerColOnly content-wrap">
+            <div id="header-block" class="flexBox-0">
+                <a class="menu-bar-txt" href="/">HOME</a>
+                <a class="menu-bar-txt" href="registration" id="register_to_upload">REGISTER</a>
+                <a class="menu-bar-txt" href="login" id="login_to_logout">LOGIN</a>
+            </div>
+            <div class="flexBox-1 alignFlexCenter">
+                <img id="homepage-logo" src="/public/images/search-logo.svg" alt="Logo" />
+            </div>
+            <div class="flexBox-2 alignFlexCenter">
+                <div id="search-bar">
+                    <div id="search-icon-div">
+                        <img id="search-icon" src="/public/images/search.svg" alt="Search Glass Icon">
+                    </div>
+                    <input placeholder="search posts...." id="search-input" name="search-input" type="text" />
+                </div>
+            </div>
+
+            <!-- post images div -->
+            <div id="main-content">
+            </div>
+        </div>
+
+
+
+        <footer class="footer smallFontSz">
+            <p>
+                <a href="terms-of-use">Terms of Use</a> |
+                <a href="privacy-policy">Privacy Policy</a> |
+                <a href="upload-policy">Upload Policy</a>
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        function createCard(data) {
+            return `<div id=post-${data.id} class="card"> \
+              <div class="flex-top"> \
+                <p class="card-title">${data.title}</p> \
+                <a href="posts/imagepost/${data.id}" class="anchor-buttons smallFontSz"> Details </a> \
+              </div> \
+                <img class="card-image" src="${data.thumbnail}"> \
+              </div>`;
+        }
+
+        function runSearch() {
+            let searchTerm = document.getElementById("search-input").value;
+            let searchURL = 'http://localhost:3000/posts/search/' + searchTerm;
+
+            fetch(searchURL)
+                .then((data) => data.json())
+                .then((dataAsObject) => {
+                    console.log(dataAsObject);
+                    let _html = " ";
+                    dataAsObject.forEach((post) => {
+                        _html += createCard(post);
+                    })
+
+                    document.getElementById('main-content').innerHTML = _html;
+
+                })
+                .catch((err) => console.log(err));
+        };
+
+        var input = document.getElementById("search-input");
+
+        input.addEventListener("keyup", function (event) { //allows user to click on keyboard button 'ENTER' to search
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                document.getElementById("search-icon-div").click();
+            }
+        });
+
+        document.getElementById('search-icon-div').onclick = runSearch;
+
+        fetch("http://localhost:3000/posts/getRecentPosts/")
+            .then((data) => data.json())
+            .then((dataAsObject) => {
+                console.log(dataAsObject);
+                let _html = "";
+                dataAsObject.forEach((post) => {
+                    _html += createCard(post);
+                })
+                document.getElementById('main-content').innerHTML = _html;
+            })
+            .catch((err) => console.log(err));
+
+    </script>
+</body>
+
+</html>

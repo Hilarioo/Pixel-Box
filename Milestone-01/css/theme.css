@@ -1,0 +1,500 @@
+/*Import Fonts*/
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Bellota&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Modak&display=swap');
+
+/*======================GENERAL======================*/
+body {
+  font-family: "Roboto Mono", monospace;
+}
+/*[START] Flex Box CSS*/
+.flexContainerCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.flexContainerColOnly {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) { /* Wider than desktop */
+  .flexContainerColCenter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .flexContainerRow {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 250px;
+  }
+}
+
+@media (max-width: 767px) { /* Landscape phone to portrait tablet */
+  .flexContainerColCenter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+  }
+
+  .flexContainerRow {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 100px;
+  }
+}
+.flexBox-0 {
+  flex: 1;
+  order: 1;
+  align-items: flex-start;
+}
+.flexBox-1 {
+  flex: 1;
+  order: 2;
+  align-items: flex-start;
+}
+
+.flexBox-2 {
+  flex: 1;
+  order: 3;
+  align-items: flex-start;
+}
+
+.flexBox-3 {
+  flex: 1;
+  order: 4;
+  align-items: flex-start;
+}
+
+/*flexBox 4 & 5 used for upload form page*/
+.flexBox-4 {
+  flex-shrink: 1;
+  order: 5;
+  align-items: flex-start;
+}
+
+@media (min-width: 768px) { /* Wider than desktop */
+  .flexBox-5 {
+    flex-shrink: 1;
+    order: 6;
+    align-items: flex-start;
+    width: 600px;
+  }
+}
+
+@media (max-width: 767px) { /* Landscape phone to portrait tablet */
+  .flexBox-5 {
+    flex-shrink: 1;
+    order: 6;
+    align-items: flex-start;
+    width: 400px;
+  }
+}
+
+.alignFlexCenter {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-container {
+  position: relative;
+  min-height: 98vh;
+}
+
+.content-wrap {
+  padding-bottom: 2rem;    /* Footer height */
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2rem;            /* Footer height */
+}
+
+/*Bellota Font*/
+.fontBellota {
+  font-family: 'Bellota', monospace;
+}
+
+.fontModak {
+  font-family: 'Modak';
+}
+
+/*Centers Any Box Horizontally | Define width needed*/
+.centerBoxH {
+  margin: auto;
+}
+
+/*Centers text in the middle*/
+.centerText {
+  text-align: center;
+}
+
+/*resizes font size*/
+.smallFontSz {
+  font-size: 11px;
+}
+
+@media (min-width: 768px) { /* Wider than desktop */
+  .smallFontMd {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 767px) { /* Landscape phone to portrait tablet */
+  .smallFontMd {
+    font-size: 12px;
+  }
+}
+
+
+/*Links Styling*/
+.links {
+  text-decoration: none;
+}
+
+a:hover {
+  color: #F2CB05;
+}
+
+a:link {
+  color: inherit;
+}
+
+a:visited {
+  color: inherit;
+}
+
+a:hover {
+  color: #F2CB05;
+}
+
+a:active {
+  color: #2AC79D;
+}
+
+
+/*======================HomePage======================*/
+.menu-bar-txt {
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 1px;
+  margin-top: 4px;
+  margin-left: 15px;
+}
+
+#upload-image {
+  float: right;
+  margin-right: 15px;
+}
+
+#profile-logo {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  display: inline-block;
+  float: right;
+}
+
+#homepage-logo {
+  width: auto;
+  height: 80px;
+  display: block;
+  margin: 150px auto 30px auto;
+}
+
+#search-bar {
+  width: 550px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, .1);
+  padding: 5px 0px 5px 10px;
+  border-radius: 50px;
+  margin: 0px auto;
+  box-shadow: -1px 1px 2px rgba(0, 0, 0, .1);
+}
+
+#search-icon {
+  margin-top: 4px;
+  height: 20px;
+  width:20px
+}
+
+.footer p {
+  text-align: center;
+  color: #787878;
+}
+
+/*======================SIGN-IN/SIGN-UP======================*/
+/*Form <div>*/
+.AccountBox {
+  background: #6805F2;
+  color: #ffffff;
+  margin-top: 250px;
+  border-radius: 20px;
+  box-shadow: -6px 6px 20px rgba(0, 0, 0, .3);
+  position: relative;
+}
+
+/*Implements Size for Form Boxes*/
+#signInBox {
+  height: 340px;
+  width: 450px;
+}
+
+#signUpBox {
+  height: 462px;
+  width: 450px;
+}
+
+/*Input for UserName and Password*/
+.AccountBox p input {
+  border-radius: 2px;
+  width: 200px;
+  border-style: none;
+  line-height: 20px;
+}
+
+/*radio circular button for SignUp*/
+.radioBttnInline-SignUp {
+  display: inline-block;
+  width: 100%;
+}
+
+.requiredClickBttn-SignUp {
+  float: left;
+  margin: 11px 10px 10px 16%;
+}
+
+/*Centers Any Image Horizontally*/
+#logo-img {
+  display: block;
+  position: absolute;
+  margin-left: 45%;
+  margin-right: 50%;
+  margin-top: -25px;
+}
+
+/*Sign In or Sign Up button*/
+#AccountBttn {
+  text-align: right;
+  padding: 10px 20px 0 0;
+}
+
+/*Sign-In | Sign-Up Header*/
+#header-signIn-signup {
+  margin: 0;
+  padding: 0 0 20px 0;
+  font-weight: 200;
+}
+
+/*Reset Password*/
+#resetPsswd {
+  width: 106px;
+  margin-left: 60%;
+}
+
+/*Align the Sign Up Inputs*/
+#alignRightEmail {
+  padding-left: 28px;
+}
+
+#alignRightReType {
+  padding-left: 20px;
+}
+
+/*Submit Form Button*/
+#submitBttn {
+  margin: 40px 0 40px 62%;
+  border-style: solid;
+  border-radius: 20px;
+  width: 100px;
+  background: none;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+/*======================POST IMAGE======================*/
+
+/*radio circular button for Upload Post*/
+@media (min-width: 768px) { /* Wider than desktop */
+  .radioBttnInline-Upload {
+    display: inline-block;
+    width: 100%;
+  }
+
+  .requiredClickBttn-Upload {
+    float: left;
+    margin: 26px 10px 10px 0;
+  }
+}
+
+@media (max-width: 767px) { /* Landscape phone to portrait tablet */
+  .radioBttnInline-Upload {
+    display: inline-block;
+    width: 100%;
+  }
+
+  .requiredClickBttn-Upload {
+    float: left;
+    margin: 13px 10px 10px 0;
+  }
+}
+
+/*Alternative button to upload Images rather then Drag & Drop*/
+.uploadImgBttn {
+  width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.uploadImgBttn:focus + label,
+.uploadImgBttn + label:hover {
+    background-color: #6805F2;
+    color: #ffffff;
+}
+
+/*Changes Upload Image size in Post Image Page & Browse Button*/
+@media (min-width: 768px) { /* Wider than desktop */
+  #uploadImg {
+    height: 200px;
+    width: 300px;
+  }
+
+  .uploadImgBttn + label {
+      color: inherit;
+      background-color: #05F29B;
+      display: inline-block;
+      border-radius: 20px;
+      width: 200px;
+      padding: 5px;
+      cursor: pointer;
+  }
+}
+
+@media (max-width: 767px) { /* Landscape phone to portrait tablet */
+  #uploadImg {
+    height: 80px;
+    width: 125px;
+  }
+
+  .uploadImgBttn + label {
+      color: inherit;
+      background-color: #05F29B;
+      display: inline-block;
+      border-radius: 20px;
+      width: 100%;
+      padding: 5px;
+      cursor: pointer;
+  }
+}
+
+
+/*Left side of upload image - attaches image*/
+@media (min-width: 1216px) { /* Wider than desktop */
+  #uploadImgBox {
+    background-color: #F8F8F8;
+    border-style: dashed;
+    border-width: thin;
+    border-radius: 50px;
+    border-color: #5B5B5B;
+    margin: 0px 100px 0px 0px;
+    padding: 50px 100px;
+  }
+}
+
+@media (max-width: 1215px) { /* Landscape phone to desktop */
+  #uploadImgBox {
+    background-color: #F8F8F8;
+    border-style: dashed;
+    border-width: thin;
+    border-radius: 50px;
+    border-color: #5B5B5B;
+    margin: 0;
+    padding: 50px 100px;
+    width: 50%;
+  }
+}
+
+@media (max-width: 767px) { /* Landscape phone to portrait tablet */
+  #uploadImgBox {
+    background-color: #F8F8F8;
+    border-style: dashed;
+    border-width: thin;
+    border-radius: 50px;
+    border-color: #5B5B5B;
+    margin: 0;
+    padding: 30px 50px;
+    width: 60%;
+  }
+}
+
+/*Right side of upload image - form*/
+#uploadTxtBox {
+  margin-top: 45px;
+}
+
+/*title post on right side - creates underline*/
+#titlePost {
+  border-style: none none solid none;
+  border-width: thin;
+  border-color: #707070;
+}
+
+/*rounds the description text box of form*/
+@media (min-width: 768px) { /* Wider than desktop */
+  #descriptionPost {
+    border-radius: 20px;
+    width: 500px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 767px) { /* Landscape phone to portrait tablet */
+  #descriptionPost {
+    border-radius: 20px;
+    width: 400px;
+    height: 100px;
+  }
+}
+
+/*Upload Form Button*/
+@media (min-width: 1218px) { /* Wider than desktop */
+  #submitBttn-Upload {
+    margin: 20px 0 40px 0;
+    border-style: solid;
+    border-radius: 20px;
+    width: 200px;
+    padding: 5px;
+    background-color: #F2CB05;
+    text-transform: uppercase;
+  }
+}
+
+@media (max-width: 1217px) { /* Landscape phone to desktop */
+  #submitBttn-Upload {
+    margin: 20px 0 40px 0;
+    border-style: solid;
+    border-radius: 20px;
+    width: 100%;
+    padding: 5px;
+    background-color: #F2CB05;
+    text-transform: uppercase;
+  }
+}

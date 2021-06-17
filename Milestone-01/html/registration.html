@@ -1,0 +1,64 @@
+<!--
+Student: Jose H. Gonzalez
+Class: CSC 317.01
+Instructor: Anthony J Souza
+Assignment 02/03
+Due Date 03/14/2020
+Last Edited: 03/10/2020
+-->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Sign-Up | AstroWorld</title>
+    <link rel="stylesheet" type="text/css" href="../css/theme.css">
+    <!--Favicon-->
+    <link rel="icon" href="../projectFiles/svg/Logo/pixel-box.svg">
+  </head>
+
+  <body>
+    <div id="signUpBox" class="AccountBox centerBoxH flexContainerCol fontRobotoMono">
+      <!--Logo SVG-->
+      <img id="logo-img" src="../projectFiles/svg/pixel-box-logo.svg" alt="Logo">
+
+      <div class="flexBox-1">
+        <p id="AccountBttn" class="smallFontSz"><a class="links" href="/html/login.html">Sign In</a> | <a class="links" href="/html/registration.html">Sign Up</a></p>
+      </div>
+
+      <div class="flexBox-2">
+        <!--Header-->
+        <h2 id="header-signIn-signup" class="centerText"><em>Sign-Up</em></h2>
+
+        <!--Start of Sign Up Sheet (Requires All Fields before submission)-->
+        <form action="index.html" method="post">
+          <p id="alignRightEmail" class="centerText">Email:
+            <input type="email" name="email" required="required">
+          </p>
+          <p class="centerText">UserName:
+            <input type="text" name="username" required="required">
+          </p>
+          <p class="centerText">Password:
+            <input type="password" name="password" required="required">
+          </p>
+          <p id="alignRightReType" class="centerText">reType:
+            <input type="password" name="password" required="required">
+          </p>
+          <div class="radioBttnInline-SignUp">
+            <input class="requiredClickBttn-SignUp" type="radio" name="ageVerification" value="Yes">
+            <p class="smallFontSz">I'm 13 years old or older.</p>
+          </div>
+          <div class="radioBttnInline-SignUp">
+            <input class="requiredClickBttn-SignUp" type="radio" name="LegalRequirements" value="Yes">
+            <p class="smallFontSz">
+              I Accept the <a href="#TermsOfService">Terms of Service</a> & <a href="#PrivacyPolicy">Privacy Policy</a>
+            </p>
+          </div>
+          <input id="submitBttn" class="fontRobotoMono" type="submit" value="Sign Up">
+        </form>
+        <!--End of Sign Up Form-->
+      </div>
+    </div>
+  </body>
+</html>

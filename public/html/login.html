@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Login | PixelBox</title>
+    <link rel="stylesheet" type="text/css" href="/public/stylesheets/style.css">
+    <!--Favicon-->
+    <link rel="icon" href="/public/images/pixel-box-logo.svg">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div id="signInBox" class="AccountBox centerBoxH flexContainerCol fontRobotoMono">
+        <!--Logo SVG-->
+        <a href="/"><img id="logo-img" src="/public/images/pixel-box-logo.svg" alt="Logo"></a>
+
+        <div class="flexBox-1">
+            <p id="AccountBttn" class="smallFontSz"><a class="links" href="/">Home</a> | <a class="links"
+                    href="registration">Sign Up</a></p>
+        </div>
+
+        <div class="flexBox-2">
+            <!--Header-->
+            <h2 id="header-signIn-signup" class="centerText"><em>Sign-In</em></h2>
+            <!--Start of Login Form (requires Username & Password)-->
+            <form id="login-form" method="POST" enctype="multipart/form-data">
+                <p class="centerText">UserName:
+                    <input id="username" type="text" name="username" required="required">
+                </p>
+                <p class="centerText">Password:
+                    <input id="password" type="password" name="password" required="required">
+                </p>
+                <p id="resetPsswd" class="smallFontSz"><a class="links" href="#">Forgot Password?</a></p>
+                <input id="submitBttn" class="fontRobotoMono" type="submit" value="Login">
+            </form>
+            <!--End of Sign-In Form-->
+        </div>
+    </div>
+
+    <script>
+        const _form = document.getElementById("login-form");
+        _form.onsubmit = function (event) {
+            event.preventDefault();
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+
+            axios('/users/auth', {
+                data: { username: username, password: password },
+                method: "POST"
+            })
+                .then((data) => {
+                    console.log(data.data);
+                    alert(data.data.message);
+                    location.replace("/");
+                })
+                .catch((err) => {
+                    console.log(err);
+                })
+        }
+    </script>
+</body>
+
+</html>

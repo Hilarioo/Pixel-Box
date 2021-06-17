@@ -1,0 +1,62 @@
+<!--
+Student: Jose H. Gonzalez
+Class: CSC 317.01
+Instructor: Anthony J Souza
+Assignment 02/03
+Due Date 03/14/2020
+Last Edited: 03/10/2020
+-->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Upload Image | AstroWorld</title>
+    <link rel="stylesheet" type="text/css" href="../css/theme.css">
+    <!--Favicon-->
+    <link rel="icon" href="../projectFiles/svg/Logo/pixel-box.svg">
+  </head>
+
+  <body>
+    <div class="flexContainerRow fontBellota">
+      <div id="uploadImgBox" class="flexBox-4">
+        <div class="flexContainerColCenter">
+          <div class="flexBox-1">
+            <p class="centerText smallFontMd">Drag & Drop your image.</p>
+            <img id="uploadImg" src="../projectFiles/svg/uploadImage/upload-image.svg" alt="Upload Image">
+          </div>
+          <div class="flexBox-2">
+            <p class="centerText smallFontMd"><strong><em>OR</em></strong></p>
+          </div>
+          <div class="flexBox-3">
+
+            <form action="index.html" method="post">
+              <input id="imgBttn" class="uploadImgBttn" type="file" name="image" required="required">
+              <label for="imgBttn" class="smallFontMd centerText">Browse</label>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div id="uploadTxtBox" class="flexBox-5 smallFontMd">
+        <!--Start of Post Image Upload Form (All Fields are required)-->
+        <form action="index.html" method="post">
+          <p>What do you want to call this post?
+            <input id="titlePost" type="text" name="postTitle" required="required">
+          </p>
+          <p>Write a small description:</p>
+          <textarea id="descriptionPost" name="description" required="required"></textarea>
+          <div class="radioBttnInline-Upload">
+            <input class="requiredClickBttn-Upload" type="radio" name="acceptableUsePolicy" value="Yes">
+            <p>I reviewed and accept the
+              <a href="#AcceptableUsePolicy">Acceptable Use Policy</a>.
+            </p>
+          </div>
+          <input id="submitBttn-Upload" class="fontBellota smallFontMd" type="submit" value="Upload">
+        </form>
+        <!--End of Post Image Upload Form-->
+      </div>
+    </div>
+  </body>
+</html>

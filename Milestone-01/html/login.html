@@ -1,0 +1,48 @@
+<!--
+Student: Jose H. Gonzalez
+Class: CSC 317.01
+Instructor: Anthony J Souza
+Assignment 02/03
+Due Date 03/14/2020
+Last Edited: 03/10/2020
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Login | AstroWorld</title>
+    <link rel="stylesheet" type="text/css" href="../css/theme.css" >
+    <!--Favicon-->
+    <link rel="icon" href="../projectFiles/svg/Logo/pixel-box.svg">
+  </head>
+
+  <body>
+    <div id="signInBox" class="AccountBox centerBoxH flexContainerCol fontRobotoMono">
+      <!--Logo SVG-->
+      <img id="logo-img" src="../projectFiles/svg/pixel-box-logo.svg" alt="Logo">
+
+      <div class="flexBox-1">
+        <p id="AccountBttn" class="smallFontSz"><a class="links" href="/html/login.html">Sign In</a> | <a class="links" href="/html/registration.html">Sign Up</a></p>
+      </div>
+
+      <div class="flexBox-2">
+        <!--Header-->
+        <h2 id="header-signIn-signup" class="centerText"><em>Sign-In</em></h2>
+        <!--Start of Login Form (requires Username & Password)-->
+        <form action="index.html" method="post">
+          <p class="centerText">UserName:
+            <input type="text" name="username" required="required">
+          </p>
+          <p class="centerText">Password:
+            <input type="password" name="password" required="required">
+          </p>
+          <p id="resetPsswd" class="smallFontSz"><a class="links" href="#">Forgot Password?</a></p>
+          <input id="submitBttn" class="fontRobotoMono" type="submit" value="Login">
+        </form>
+        <!--End of Sign-In Form-->
+      </div>
+    </div>
+  </body>
+</html>

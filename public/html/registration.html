@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Sign-Up | PixelBox</title>
+    <link rel="stylesheet" type="text/css" href="/public/stylesheets/style.css" />
+    <!--Favicon-->
+    <link rel="icon" href="/public/images/pixel-box-logo.svg">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div id="signUpBox" class="AccountBox centerBoxH flexContainerCol fontRobotoMono">
+        <!--Logo SVG-->
+        <a href="/"><img id="logo-img" src="/public/images/pixel-box-logo.svg" alt="Logo" /></a>
+
+        <div class="flexBox-1">
+            <p id="AccountBttn" class="smallFontSz">
+                <a class="links" href="/">Home</a> |
+                <a class="links" href="login">Sign In</a>
+            </p>
+        </div>
+
+        <div class="flexBox-2">
+            <!--Header-->
+            <h2 id="header-signIn-signup" class="centerText"><em>Sign-Up</em></h2>
+
+            <!--Start of Sign Up Sheet (Requires All Fields before submission)-->
+            <form id="registration-form" method="POST" enctype="application/x-www-form-urlencoded">
+                <p id="alignRightEmail" class="centerText">
+                    Email:
+                    <input id="email" type="email" name="email" required="required" />
+                </p>
+                <p class="centerText">
+                    UserName:
+                    <input id="username" type="text" name="username" required="required" />
+                </p>
+                <p class="centerText">
+                    Password:
+                    <input id="password" type="password" name="password" required="required" />
+                </p>
+                <p id="alignRightReType" class="centerText">
+                    reType:
+                    <input placeholder="Confirm Password" id="confirm_password" type="password" name="confirm_password"
+                        required="required" />
+                </p>
+                <div class="radioBttnInline-SignUp">
+                    <input class="requiredClickBttn-SignUp" id="ageVerification" type="radio" name="ageVerification"
+                        value="Yes" />
+                    <p class="smallFontSz">I'm 13 years old or older.</p>
+                </div>
+                <div class="radioBttnInline-SignUp">
+                    <input class="requiredClickBttn-SignUp" id="LegalRequirements" type="radio" name="LegalRequirements"
+                        value="Yes" />
+                    <p class="smallFontSz">
+                        I Accept the <a href="terms-of-use">Terms of Service</a> &
+                        <a href="privacy-policy">Privacy Policy</a>
+                    </p>
+                </div>
+                <input id="submitBttn" class="fontRobotoMono" type="submit" value="Sign Up" />
+            </form>
+            <!--End of Sign Up Form-->
+        </div>
+    </div>
+
+    <script>
+        const _form = document.getElementById("registration-form");
+        _form.onsubmit = function (event) {
+            event.preventDefault();
+            let email = document.getElementById("email").value;
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+            let confirm_password = document.getElementById("confirm_password").value;
+            let ageVerification = document.getElementById("ageVerification").value;
+            let LegalRequirements = document.getElementById("LegalRequirements").value;
+
+            axios('/users/register', {
+                data: {
+                    email: email,
+                    username: username,
+                    password: password,
+                    confirm_password: confirm_password,
+                    ageVerification: ageVerification,
+                    LegalRequirements: LegalRequirements
+                },
+                method: "POST"
+            })
+                .then((data) => {
+                    console.log(data.data);
+                    alert(data.data.message);
+                    location.replace("/");
+                })
+                .catch((err) => {
+                    console.log(err);
+                })
+        }
+    </script>
+</body>
+
+</html>

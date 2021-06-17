@@ -1,0 +1,826 @@
+/*Import Fonts*/
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Bellota&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Modak&display=swap");
+
+/*====================== GENERAL ======================*/
+body {
+  font-family: "Roboto Mono", monospace;
+}
+
+input,
+button,
+textarea {
+  outline-width: 0;
+}
+
+@media (min-width: 768px) {
+  /* Wider than desktop */
+  .flexContainerColCenter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .flexContainerRow {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 75px;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Landscape phone to portrait tablet */
+  .flexContainerColCenter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+  }
+
+  .flexContainerRow {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 100px;
+  }
+}
+.flexBox-0 {
+  flex: 1;
+  order: 1;
+  align-items: flex-start;
+}
+.flexBox-1 {
+  flex: 1;
+  order: 2;
+  align-items: flex-start;
+}
+
+.flexBox-2 {
+  flex: 1;
+  order: 3;
+  align-items: flex-start;
+}
+
+.flexBox-3 {
+  flex: 1;
+  order: 4;
+  align-items: flex-start;
+}
+
+/*flexBox 4 & 5 used for upload form page*/
+.flexBox-4 {
+  flex-shrink: 1;
+  order: 5;
+  align-items: flex-start;
+}
+
+@media (min-width: 768px) {
+  /* Wider than desktop */
+  .flexBox-5 {
+    flex-shrink: 1;
+    order: 6;
+    align-items: flex-start;
+    width: 600px;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Landscape phone to portrait tablet */
+  .flexBox-5 {
+    flex-shrink: 1;
+    order: 6;
+    align-items: flex-start;
+    width: 400px;
+  }
+}
+
+.alignFlexCenter {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-container {
+  position: relative;
+  min-height: 98vh;
+}
+
+.content-wrap {
+  padding-bottom: 2rem; /* Footer height */
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2rem; /* Footer height */
+}
+
+/*Bellota Font*/
+.fontBellota {
+  font-family: "Bellota", monospace;
+}
+
+.fontModak {
+  font-family: "Modak";
+}
+
+/*Centers Any Box Horizontally | Define width needed*/
+.centerBoxH {
+  margin: auto;
+}
+
+/*Centers text in the middle*/
+.centerText {
+  text-align: center;
+}
+
+/*resizes font size*/
+.smallFontSz {
+  font-size: 11px;
+}
+
+@media (min-width: 768px) {
+  /* Wider than desktop */
+  .smallFontMd {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Landscape phone to portrait tablet */
+  .smallFontMd {
+    font-size: 12px;
+  }
+}
+
+/*Links Styling*/
+.links {
+  text-decoration: none;
+}
+
+a:hover {
+  color: #f2cb05;
+}
+
+a:link {
+  color: inherit;
+}
+
+a:visited {
+  color: inherit;
+}
+
+a:hover {
+  color: #f2cb05;
+}
+
+a:active {
+  color: #2ac79d;
+}
+
+/*====================== HOME PAGE ======================*/
+.menu-bar-txt {
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 1px;
+  margin-top: 4px;
+  margin-left: 15px;
+}
+
+/* Dropdown Button */
+.dropbtn {
+  color: white;
+  padding: 0px;
+  font-size: 12px;
+  border: none;
+}
+
+#upload-image {
+  float: right;
+  margin-right: 15px;
+}
+
+#profile-logo {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  display: inline-block;
+  float: right;
+}
+
+#homepage-logo {
+  width: auto;
+  height: 80px;
+  display: block;
+  margin: 50px auto 30px auto;
+}
+
+@media (min-width: 768px) {
+  #search-bar {
+    width: 550px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, 0.1);
+    padding: 5px 0px 5px 10px;
+    border-radius: 50px;
+    margin: 0px auto;
+    box-shadow: -1px 1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  #search-input {
+    display: inline-block;
+    float: left;
+    margin: -28px 0 0 25px;
+    width: 500px;
+    height: 25px;
+    border-style: none;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 767px) {
+  #search-bar {
+    width: 400px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, 0.1);
+    padding: 5px 0px 5px 10px;
+    border-radius: 50px;
+    margin: 0px auto;
+    box-shadow: -1px 1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  #search-input {
+    display: inline-block;
+    float: left;
+    margin: -28px 0 0 25px;
+    width: 350px;
+    height: 25px;
+    border-style: none;
+    font-size: 15px;
+  }
+}
+
+#search-icon {
+  display: inline-block;
+  margin-top: 4px;
+  height: 20px;
+  width: 20px;
+}
+
+input#search-input:focus {
+  outline-width: 0;
+}
+
+.footer p {
+  text-align: center;
+  color: #787878;
+}
+
+/*====================== SIGN-IN / SIGN-UP ======================*/
+/*Form <div>*/
+.AccountBox {
+  background: #6805f2;
+  color: #ffffff;
+  margin-top: 75px;
+  border-radius: 20px;
+  box-shadow: -6px 6px 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+/*Implements Size for Form Boxes*/
+#signInBox {
+  height: 340px;
+  width: 450px;
+}
+
+#signUpBox {
+  height: 462px;
+  width: 450px;
+}
+
+/*Input for UserName and Password*/
+.AccountBox p input {
+  border-radius: 2px;
+  width: 200px;
+  border-style: none;
+  line-height: 20px;
+}
+
+/*radio circular button for SignUp*/
+.radioBttnInline-SignUp {
+  display: inline-block;
+  width: 100%;
+}
+
+.requiredClickBttn-SignUp {
+  float: left;
+  margin: 11px 10px 10px 16%;
+}
+
+/*Centers Any Image Horizontally*/
+#logo-img {
+  display: block;
+  position: absolute;
+  margin-left: 45%;
+  margin-right: 50%;
+  margin-top: -25px;
+}
+
+/*Sign In or Sign Up button*/
+#AccountBttn {
+  text-align: right;
+  padding: 10px 20px 0 0;
+}
+
+/*Sign-In | Sign-Up Header*/
+#header-signIn-signup {
+  margin: 0;
+  padding: 0 0 20px 0;
+  font-weight: 200;
+}
+
+/*Reset Password*/
+#resetPsswd {
+  width: 106px;
+  margin-left: 60%;
+}
+
+/*Align the Sign Up Inputs*/
+#alignRightEmail {
+  padding-left: 28px;
+}
+
+#alignRightReType {
+  padding-left: 20px;
+}
+
+/*Submit Form Button*/
+#submitBttn {
+  margin: 40px 0 40px 62%;
+  border-style: solid;
+  border-radius: 20px;
+  width: 100px;
+  background: none;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+/*====================== RECENT POSTS ======================*/
+@media (max-width: 767px) {
+  #main-content {
+    flex: 2;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: top;
+    width: 100vw;
+    margin: 50px auto 30px auto;
+  }
+
+  .card {
+    margin: 15px 5px 15px 5px;
+    width: 210px;
+  }
+}
+
+@media (min-width: 768px) {
+  #main-content {
+    flex: 2;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: top;
+    width: 75vw;
+    margin: 50px auto 30px auto;
+  }
+
+  .card {
+    margin: 15px;
+    width: 210px;
+  }
+}
+
+.flex-top {
+  display: flex;
+  flex-direction: row;
+  width: 210px;
+  margin: 0 auto 5px auto;
+}
+
+.card-title {
+  flex: 1;
+  text-align: left;
+  margin: 0 0 5px 0;
+  font-weight: 100;
+  font-size: 15px;
+  width: 100px;
+}
+
+.anchor-buttons {
+  border-radius: 50px;
+  padding: 5px 10px 5px 10px;
+  background-color: #05f29b;
+  text-decoration: none;
+}
+
+.anchor-buttons:hover {
+  background-color: #383838;
+  color: #ffffff !important;
+}
+
+.card-image {
+  display: block;
+  margin: 0 auto 0 auto;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: #383838;
+  box-shadow: -5px 5px 2px rgba(0, 0, 0, 0.1);
+}
+
+/*====================== POST IMAGE ======================*/
+
+/*radio circular button for Upload Post*/
+@media (min-width: 768px) {
+  /* Wider than desktop */
+  .radioBttnInline-Upload {
+    display: inline-block;
+    width: 100%;
+  }
+
+  .requiredClickBttn-Upload {
+    float: left;
+    margin: 26px 10px 10px 0;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Landscape phone to portrait tablet */
+  .radioBttnInline-Upload {
+    display: inline-block;
+    width: 100%;
+  }
+
+  .requiredClickBttn-Upload {
+    float: left;
+    margin: 13px 10px 10px 0;
+  }
+}
+
+/*Alternative button to upload Images rather then Drag & Drop*/
+.uploadImgBttn {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.uploadImgBttn:focus + label,
+.uploadImgBttn + label:hover {
+  background-color: #6805f2;
+  color: #ffffff;
+}
+
+/*Changes Upload Image size in Post Image Page & Browse Button*/
+@media (min-width: 768px) {
+  /* Wider than desktop */
+  #uploadImg {
+    height: 200px;
+    width: 300px;
+  }
+
+  .uploadImgBttn + label {
+    color: inherit;
+    background-color: #05f29b;
+    display: inline-block;
+    border-radius: 20px;
+    width: 200px;
+    padding: 5px;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Landscape phone to portrait tablet */
+  #uploadImg {
+    height: 80px;
+    width: 125px;
+  }
+
+  .uploadImgBttn + label {
+    color: inherit;
+    background-color: #05f29b;
+    display: inline-block;
+    border-radius: 20px;
+    width: 100%;
+    padding: 5px;
+    cursor: pointer;
+  }
+}
+
+/*Left side of upload image - attaches image*/
+@media (min-width: 1216px) {
+  /* Wider than desktop */
+  #uploadImgBox {
+    background-color: #f8f8f8;
+    border-style: dashed;
+    border-width: thin;
+    border-radius: 50px;
+    border-color: #5b5b5b;
+    margin: 0px 100px 0px 0px;
+    padding: 50px 100px;
+  }
+}
+
+@media (max-width: 1215px) {
+  /* Landscape phone to desktop */
+  #uploadImgBox {
+    background-color: #f8f8f8;
+    border-style: dashed;
+    border-width: thin;
+    border-radius: 50px;
+    border-color: #5b5b5b;
+    margin: 0;
+    padding: 50px 100px;
+    width: 50%;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Landscape phone to portrait tablet */
+  #uploadImgBox {
+    background-color: #f8f8f8;
+    border-style: dashed;
+    border-width: thin;
+    border-radius: 50px;
+    border-color: #5b5b5b;
+    margin: 0;
+    padding: 30px 50px;
+    width: 60%;
+  }
+}
+
+/*Right side of upload image - form*/
+#uploadTxtBox {
+  margin-top: 45px;
+}
+
+/*title post on right side - creates underline*/
+#titlePost {
+  border-style: none none solid none;
+  border-width: thin;
+  border-color: #707070;
+}
+
+/*rounds the description text box of form*/
+@media (min-width: 768px) {
+  /* Wider than desktop */
+  #descriptionPost {
+    border-radius: 20px;
+    width: 500px;
+    height: 150px;
+    padding: 10px 0 0 10px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Landscape phone to portrait tablet */
+  #descriptionPost {
+    border-radius: 20px;
+    width: 400px;
+    height: 100px;
+  }
+}
+
+/*Upload Form Button*/
+@media (min-width: 1218px) {
+  /* Wider than desktop */
+  #submitBttn-Upload {
+    margin: 20px 0 40px 0;
+    border-style: solid;
+    border-radius: 20px;
+    width: 200px;
+    padding: 5px;
+    background-color: #f2cb05;
+    text-transform: uppercase;
+  }
+}
+
+@media (max-width: 1217px) {
+  /* Landscape phone to desktop */
+  #submitBttn-Upload {
+    margin: 20px 0 40px 0;
+    border-style: solid;
+    border-radius: 20px;
+    width: 100%;
+    padding: 5px;
+    background-color: #f2cb05;
+    text-transform: uppercase;
+  }
+}
+
+/*====================== POST DETAILS ======================*/
+@media (max-width: 767px) {
+  #post-container {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto 50px auto;
+  }
+
+  #image-post {
+    flex: 2;
+    width: 400px;
+    border-radius: 15px;
+    margin-bottom: 5px;
+    box-shadow: -5px 5px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  #flex-author-date {
+    flex: 3;
+    display: flex;
+    flex-direction: row;
+    width: 400px;
+  }
+
+  #image-post-desc {
+    font-size: 13px;
+    margin-top: 25px;
+    width: 400px;
+    text-align: center;
+  }
+}
+
+@media (min-width: 768px) {
+  #post-container {
+    display: flex;
+    flex-direction: column;
+    width: 550px;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto 50px auto;
+  }
+
+  #image-post {
+    flex: 2;
+    width: 500px;
+    border-radius: 15px;
+    margin-bottom: 5px;
+    box-shadow: -5px 5px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  #flex-author-date {
+    flex: 3;
+    display: flex;
+    flex-direction: row;
+    width: 460px;
+  }
+
+  #image-post-desc {
+    margin-top: 25px;
+    width: 450px;
+    text-align: center;
+  }
+}
+
+#image-post-title {
+  flex: 1;
+  margin: 0;
+  font-size: 30px;
+  text-align: left;
+  letter-spacing: 3px;
+  font-weight: 100;
+}
+
+#image-post-author {
+  flex: 1;
+  text-align: left;
+  display: inline;
+}
+#image-post-date {
+  flex: 2;
+  text-align: right;
+  display: inline;
+}
+
+/*====================== POST DETAILS -> SUBMIT COMMENTS ======================*/
+@media (max-width: 767px) {
+  #comment {
+    height: 25px;
+    width: 350px;
+    padding-left: 10px;
+    font-size: 15px;
+    border-width: 0 0 2px 0;
+    border-bottom: solid black;
+  }
+}
+
+@media (min-width: 768px) {
+  #comment {
+    height: 25px;
+    width: 500px;
+    padding-left: 10px;
+    font-size: 15px;
+    border-width: 0 0 2px 0;
+    border-bottom: solid black;
+  }
+}
+
+#post-comments {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#submit-comment {
+  width: 80px;
+  height: 25px;
+  font-size: 14px;
+  background-color: #383838;
+  color: #ffffff;
+  border-radius: 50px;
+  border-style: none;
+}
+
+#submit-comment:hover {
+  background-color: #05f29b;
+  color: #383838;
+}
+
+/*====================== POST DETAILS -> INDIVIDUAL COMMENT ======================*/
+@media (max-width: 767px) {
+  #comment-container {
+    margin-top: 30px;
+    width: 400px;
+  }
+  .comment-text {
+    margin: 0;
+    font-size: 12px;
+  }
+
+  #flex-user-date {
+    flex: 3;
+    display: flex;
+    flex-direction: row;
+    width: 380px;
+    margin-bottom: 4px;
+  }
+}
+
+@media (min-width: 768px) {
+  #comment-container {
+    margin-top: 30px;
+    width: 600px;
+  }
+  .comment-text {
+    margin: 0;
+  }
+
+  #flex-user-date {
+    flex: 3;
+    display: flex;
+    flex-direction: row;
+    width: 580px;
+    margin-bottom: 10px;
+  }
+}
+
+.comment-box {
+  background-color: #cecece;
+  border-radius: 10px;
+  padding: 5px 0 5px 10px;
+  margin: 0 0 10px 0;
+}
+
+.comment-user {
+  margin: 0;
+  padding: 0;
+  color: rgb(90, 90, 90);
+  flex: 1;
+  text-align: left;
+  display: inline;
+}
+
+.comment-date {
+  flex: 2;
+  text-align: right;
+  display: inline;
+  color: rgb(90, 90, 90);
+}
