@@ -2,9 +2,9 @@ const mysql = require("mysql2");
 
 const pool = mysql.createPool({
   HOST: "us-cdbr-east-04.cleardb.com",
-  USER: "bfd93c1e393fe5",
-  PASSWORD: "a80e4cf9",
-  DB: "heroku_f474c0f73045de6",
+  USER: "bf4632bf76d9ee",
+  PASSWORD: "e3418020",
+  DB: "heroku_b85a72d8a238e2c",
 });
 
 const promisePool = pool.promise();
