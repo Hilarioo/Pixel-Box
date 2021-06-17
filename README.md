@@ -4,6 +4,10 @@
 
 Pixel Box is a photo management website that allows users to post images, search for images and view individual image posts. Like the website https://imgur.com/. This project was an assignment for my Introduction to Web Software (SFSU CSC317).
 
+### GIF of user adding a comment to a post
+
+![ui video demo](public/images/pixel-box.gif)
+
 Functional Requirements:
 
 - Unregistered users must be able create a user account.
@@ -21,9 +25,6 @@ None-Functional Requirements:
 - Image Post information must be stored in the application’s database
 - Logged in users must stay logged in as they navigate your website until they log out.
 
-### GIF of user adding a comment to a post
-
-![ui video demo](public/images/pixel-box.gif)
 
 ### Build Instructions
 
