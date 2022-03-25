@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Upload Image | PixelBox</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/public/stylesheets/style.css"
+    />
+    <!--Favicon-->
+    <link rel="icon" href="/public/images/pixel-box-logo.svg" />
+    <script defer src="/public/javascripts/frontend.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+
+  <body>
+    <div id="header-block" class="flexBox-0">
+      <a class="menu-bar-txt" href="/">HOME</a>
+      <a class="menu-bar-txt" href="registration" id="register_to_upload"
+        >REGISTER</a
+      >
+      <a class="menu-bar-txt" href="login" id="login_to_logout">LOGIN</a>
+    </div>
+    <div class="flexContainerRow fontBellota">
+      <div id="uploadImgBox" class="flexBox-4">
+        <div class="flexContainerColCenter">
+          <div class="flexBox-1">
+            <p class="centerText smallFontMd">Upload Your Post</p>
+            <img
+              id="uploadImg"
+              src="/public/images/uploadImage/upload-image.svg"
+              alt="Upload Image"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div id="uploadTxtBox" class="flexBox-5 smallFontMd">
+        <!--Start of Post Image Upload Form (All Fields are required) EDITED OUT {action="/posts/createPost"}-->
+        <form id="post-image" method="POST" enctype="multipart/form-data">
+          <p>
+            What do you want to call this post?
+            <input
+              id="titlePost"
+              type="text"
+              name="title"
+              required="required"
+            />
+          </p>
+          <p>Write a small description:</p>
+          <textarea
+            id="descriptionPost"
+            name="description"
+            required="required"
+          ></textarea>
+          <input
+            id="imgBttn"
+            type="file"
+            name="uploadImage"
+            required="required"
+          />
+          <div class="radioBttnInline-Upload">
+            <input
+              class="requiredClickBttn-Upload"
+              type="radio"
+              name="acceptableUsePolicy"
+              value="Yes"
+              required="required"
+            />
+            <p>
+              I reviewed and accept the
+              <a href="upload-policy">Upload Policy</a>.
+            </p>
+          </div>
+          <input
+            id="submitBttn-Upload"
+            class="fontBellota smallFontMd"
+            type="submit"
+            value="Upload"
+          />
+        </form>
+        <!--End of Post Image Upload Form-->
+      </div>
+    </div>
+
+    <script>
+      const _form = document.getElementById("post-image");
+      _form.onsubmit = function (event) {
+        event.preventDefault();
+        let _body = new FormData(_form);
+
+        axios("/posts/createPost", {
+          data: _body,
+          method: "POST",
+        })
+          .then((data) => {
+            console.log(data.data);
+            alert(data.data.message);
+            location.replace("/");
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      };
+    </script>
+  </body>
+</html>
