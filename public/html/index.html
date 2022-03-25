@@ -59,7 +59,7 @@
 
         function runSearch() {
             let searchTerm = document.getElementById("search-input").value;
-            let searchURL = 'http://localhost:3000/posts/search/' + searchTerm;
+            let searchURL = '/posts/search/' + searchTerm;
 
             fetch(searchURL)
                 .then((data) => data.json())
@@ -87,7 +87,7 @@
 
         document.getElementById('search-icon-div').onclick = runSearch;
 
-        fetch("http://localhost:3000/posts/getRecentPosts/")
+        fetch("/posts/getRecentPosts/")
             .then((data) => data.json())
             .then((dataAsObject) => {
                 console.log(dataAsObject);
