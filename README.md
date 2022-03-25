@@ -1,5 +1,7 @@
 # Pixel Box
 
+Live Demo: https://pixel-box-webapp.herokuapp.com/
+
 ## Overview
 
 Pixel Box is a photo management website that allows users to post images, search for images and view individual image posts. Like the website https://imgur.com/. This project was an assignment for my Introduction to Web Software (SFSU CSC317).
@@ -8,7 +10,7 @@ Pixel Box is a photo management website that allows users to post images, search
 
 ![ui video demo](public/images/pixel-box.gif)
 
-Functional Requirements:
+Functionality :
 
 - Unregistered users must be able create a user account.
 - Registered users must be able to log in.
@@ -17,13 +19,6 @@ Functional Requirements:
 - Registered users must be able to search for image posts
 - Unregistered users must be able to search for image posts.
 - Unregistered user must be able to view individual image posts.
-
-None-Functional Requirements:
-
-- User account information must be stored in the application’s database
-- User Passwords must be encrypted.
-- Image Post information must be stored in the application’s database
-- Logged in users must stay logged in as they navigate your website until they log out.
 
 
 ### Build Instructions
