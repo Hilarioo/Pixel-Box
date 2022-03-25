@@ -6,7 +6,7 @@ function signOut(event) {
       "Content-Type": "application/json",
     },
   };
-  let fetchURL = "http://localhost:3000/users/logout";
+  let fetchURL = "/users/logout";
   fetch(fetchURL, fetchOptions)
     .then((data) => {
       console.log(data);
